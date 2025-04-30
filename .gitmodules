@@ -1,0 +1,9 @@
+[submodule "url-app"]
+	path = url-app
+	url = git@github.com:juandrescar/url-app.git
+[submodule "url-stats"]
+	path = url-stats
+	url = git@github.com:juandrescar/url-stats.git
+[submodule "cut-url-api"]
+	path = cut-url-api
+	url = git@github.com:juandrescar/cut-url-api.git
