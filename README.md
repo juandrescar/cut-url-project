@@ -23,7 +23,7 @@ Además, incluye archivos de configuración como `docker-compose.yml` y `nginx/`
 
 ```bash
 git clone --recurse-submodules https://github.com/juandrescar/cut-url-project.git
-cd cut-url
+cd cut-url-project
 ```
 
 2. Si ya clonaste sin --recurse-submodules, puedes hacer esto:
@@ -68,7 +68,7 @@ Cada submódulo es un repo independiente.
 
 Para hacer cambios en un submódulo:
 ```bash
-cd api-laravel
+cd cut-url-api
 # Haces tus cambios normalmente
 git checkout -b nueva-rama
 git commit -am "Cambios en API"
@@ -79,8 +79,8 @@ Luego vuelves al repo principal:
 
 ```bash
 cd ..
-git add api-laravel
-git commit -m "Update submodule api-laravel to latest commit"
+git add cut-url-api
+git commit -m "Update submodule cut-url-api to latest commit"
 git push origin main
 ```
 
@@ -136,18 +136,27 @@ RABBITMQ_VHOST=/
 ```
 
 ## Configurar el contenedor Nestjs
+1. Entrar en el contenedor de Nestjs
+```bash
+docker compose exec url-stats sh
+```
 
-1. Copiar y renombrar el archivo de variables de entorno:
+2. Copiar y renombrar el archivo de variables de entorno:
 ```bash
 cp .env.example .env
 ```
 
-2. Agregar secreto JWT de laravel:
+3. Agregar secreto JWT de laravel:
 ```bash
 JWT_SECRET=
 ```
 
 ## Configurar el contenedor Vue
+1. Entrar en el contenedor de Vue
+```bash
+docker compose exec url-app sh
+```
+
 1. Copiar y renombrar el archivo de variables de entorno:
 ```bash
 cp .env.example .env
